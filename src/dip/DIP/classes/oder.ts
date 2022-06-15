@@ -27,6 +27,8 @@ export class Order{
       return;
     }
 
+    this._ordemStatus = 'close'
+
     this.message.sendMessage('Seu pedido esta sendo processado com o valor: ' + this.cart.totalWithDicount())
     this.persistency.saveOrder()
     this.cart.closed()
